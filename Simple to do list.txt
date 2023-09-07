@@ -1,0 +1,42 @@
+def show_tasks(tasks):
+    print("Your To-Do List:")
+    for i, task in enumerate(tasks, start=1):
+        print(f"{i}. {task}")
+
+def add_task(tasks, new_task):
+    tasks.append(new_task)
+    print("Task added successfully!")
+
+def remove_task(tasks, task_to_remove):
+    if task_to_remove in tasks:
+        tasks.remove(task_to_remove)
+        print("Task removed successfully!")
+    else:
+        print("Task not found in the list.")
+
+if _name_ == "_main_":
+    print("Welcome to the To-Do List!")
+    tasks = []
+
+    while True:
+        print("\nChoose an option:")
+        print("1. Show tasks")
+        print("2. Add task")
+        print("3. Remove task")
+        print("4. Exit")
+
+        choice = int(input())
+
+        if choice == 1:
+            show_tasks(tasks)
+        elif choice == 2:
+            new_task = input("Enter the task: ")
+            add_task(tasks, new_task)
+        elif choice == 3:
+            task_to_remove = input("Enter the task to remove: ")
+            remove_task(tasks, task_to_remove)
+        elif choice == 4:
+            print("Thank you for using the To-Do List!")
+            break
+        else:
+            print("Invalid choice. Try again.")
